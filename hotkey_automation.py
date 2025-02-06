@@ -16,7 +16,7 @@ def vinput(title, prompt, width, height):
 
 def thanks():
     pyautogui.write("Thank you,\n")
-    pyautogui.write("AIROS Support (Traevon B)")
+    pyautogui.write("Support (Traevon B)")
     keyboard.add_hotkey("command+t", thanks)
 
 #use the keyboard module to simulate hotkeys on windows 
@@ -33,4 +33,4 @@ print(response)
 
 #keep the script running to listen fo key inputs
 
-# keyboard.wait("esc")      (this is real code but is commented out.)
+# keyboard.wait("esc")      (this is real code but is commented)
