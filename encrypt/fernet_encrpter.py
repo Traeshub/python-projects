@@ -14,18 +14,33 @@ def write_key():
     with open("secret.key", "wb") as key_file:
         key_file.write(key)
 
-#write_key()        | #uncomment to generate a new key
+#write_key()         #uncomment to generate a new key
 
 def load_key():
     return open("secret.key", "rb").read()
+
+#Encryption
 
 def encrypt_file(filename):
     key = load_key()
     fernet = Fernet(key)
     with open (filename, "rb") as file:
         original_data = file.read()
-    encrypt_data = fernet.encrypt(original_data)
+    encrypted_data = fernet.encrypt(original_data)
     with open (filename, "wb") as file:
-        file.write(encrypt_data)
+        file.write(encrypted_data)
 
-encrypt_file("example_text.txt")
+#encrypt_file("example_text.txt")   #uncomment to encrpypt
+
+#Decryption
+
+def decrypt_file(filename):
+    key = load_key()
+    fernet = Fernet(key)
+    with open (filename, "rb") as file:
+        encrypted_data = file.read()
+    decrypted_data = fernet.decrypt(encrypted_data)
+    with open (filename, "wb") as file:
+        file.write(decrypted_data)
+
+decrypt_file("example_text.txt")   #uncomment to decrypt a file
