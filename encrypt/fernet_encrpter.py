@@ -43,4 +43,4 @@ def decrypt_file(filename):
     with open (filename, "wb") as file:
         file.write(decrypted_data)
 
-decrypt_file("example_text.txt")   #uncomment to decrypt a file
+#decrypt_file("example_text.txt")   #uncomment to decrypt a file
